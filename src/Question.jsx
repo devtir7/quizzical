@@ -3,55 +3,53 @@ import Choice from "./choice.jsx"
 import {nanoid} from "nanoid"
 
 export default function(props) {
-    //console.log(props)
     const [choices, setChoices] = React.useState()
-
-    // var arrLength = props.incorrectChoices.length
 
     //takes array of incorrect choices
     //inserts the correct choice into that array
-    //at a random position
+    // //at a random position
+    // let tempArr = props.incorrectChoices?.splice((props.incorrectChoices?.length+1) * Math.random() | 0, 0, props.correctAns)
     
-
     React.useEffect(() => {
-        const tempArr = props.incorrectChoices?.splice((props.incorrectChoices?.length+1) * Math.random() | 0, 0, props.correctAns)
-        // console.log(props.correctAns)
+        const tempArr = props.incorrectChoices?.toSpliced(Math.floor((props.incorrectChoices?.length + 1) * Math.random()) | 0, 0, props.correctAns)
+
         const fixedVal = tempArr?.map(item => {
-            console.log(item)
             return {
-                ...item,
+                answer: item,
                 id: nanoid(),
                 isSelected: false
             }
         })
-        // console.log(props.incorrectChoices)
+
         setChoices(fixedVal)
     }, [])
 
     function selectAnswer(id) {
         setChoices(oldChoices => oldChoices.map(choice => {
             return choice.id === id ?
-                {...choice, isSelected: !isSelected} :
+                {
+                    ...choice,
+                    isSelected: !choice.isSelected
+                }
+                :
                 choice
         }))
     }
     
     const choiceElements = choices?.map(choice =>
-        <>
-        <p>choices</p>
-            {/* <Choice 
+            <Choice 
                     key={choice.id}
-                    value={choice.value}
+                    value={choice.answer}
                     isSelected={choice.isSelected}
                     selectAnswer={() => selectAnswer(choice.id)}
-            /> */}
-        </>
-        
+            />        
     )
 
+    
+
     React.useEffect(() => {
-        console.log(tempArr)
-    }, [console.log(tempArr)])
+        console.log(choices)
+    }, [console.log(choices)])
 
     return (
         <>

@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Choice(props) {
     const styles = {
-        backgroundColor: props.isSelected? "#D6DBF5" : white
+        backgroundColor: props.isSelected? "#D6DBF5" : "white"
     }
     
     return (
