@@ -32,9 +32,11 @@ export default function() {
             setQuestions(temp)
         }
         getQuestions()
-        // WHY WON'T IT PRINT QUESTIONS
-        //console.log(questions.length)
     }, [])
+
+    // React.useEffect(() => {
+    //     console.log(questions)
+    // }, [questions])
 
     return (
         

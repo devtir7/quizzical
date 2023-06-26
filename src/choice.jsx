@@ -8,7 +8,8 @@ export default function Choice(props) {
     return (
         <div
             className="answer-section"
-
+            style={styles}
+            onClick={props.selectAnswer}
         >
             <h3 className="answer-choice">{props.value}</h3>
         </div>
