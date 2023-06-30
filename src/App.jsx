@@ -1,14 +1,14 @@
 import React from 'react'
 import Intro from "./intro-page.jsx"
-import QuestionsPage from "./questions-page.jsx"
+import Quiz from "./quiz.jsx"
 
 function App() {
-  const [quizStarted, setQuizStarted] = React.useState(true)
+  const [quizStarted, setQuizStarted] = React.useState(false)
 
   return (
     <>
       {quizStarted ?
-                    <QuestionsPage
+                    <Quiz
                     
                     />
                     

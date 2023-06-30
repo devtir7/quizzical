@@ -12,7 +12,6 @@ export default function(props) {
             <h1>Quizzical</h1>
             <p>Test your knowledge</p>
             <button onClick={startQuiz}>Start quiz</button>
-            <div className='blob'></div>
         </div>   
     )
 }

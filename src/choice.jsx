@@ -1,17 +1,32 @@
 import React from "react"
+import classNames from "classnames"
 
 export default function Choice(props) {
-    const styles = {
-        backgroundColor: props.isSelected? "#D6DBF5" : "white"
+
+    function handle() {
+        props.handleSelection(props.groupKey, props.value)
+        props.selectAnswer(props.choiceKey)
     }
-    
+
     return (
-        <div
-            className="answer-section"
-            style={styles}
-            onClick={props.selectAnswer}
-        >
-            <h3 className="answer-choice">{props.value}</h3>
-        </div>
+        <>
+            <input
+                type="radio"
+                id={props.choiceKey}
+                name={props.groupKey}
+                value={props.answer}
+                onClick={handle}
+                disabled={props.disabled}
+                result={props.result}
+            />
+                {/* conditionally sets CSS classes according to each choice */}
+                <label htmlFor={props.choiceKey} className={classNames("button", {
+                    'correct-choice': props.result && props.isCorrect,
+                    'incorrect-choice': props.result && props.isSelected && !props.isCorrect,
+                    'unselected-choice': props.result && !props.isSelected,
+                    'no-hover': props.result && props.disabled
+                })}>{props.value}
+                </label>
+        </>
     )
 }
