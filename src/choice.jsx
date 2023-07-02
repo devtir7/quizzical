@@ -2,7 +2,7 @@ import React from "react"
 import classNames from "classnames"
 
 export default function Choice(props) {
-
+    
     function handle() {
         props.handleSelection(props.groupKey, props.value)
         props.selectAnswer(props.choiceKey)

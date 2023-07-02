@@ -42,17 +42,21 @@ export default function(props) {
         setChoices(fixedVal)
     }, [props.result])
 
-    //uses the ID of the answer choice to toggle whether it has been selected or not
-    //by setting isSelected to true or false
+    //uses the ID of the answer choice that the user clicked
+    //to toggle the value of isSelected to true
+    //and setting isSelected to false for every other choice
     function selectAnswer(choiceID) {
         setChoices(oldChoices => oldChoices.map(choice => {
             return choice.id === choiceID ?
                 {
                     ...choice,
-                    isSelected: !choice.isSelected
+                    isSelected: true
                 }
                 :
-                choice
+                {
+                    ...choice,
+                    isSelected: false
+            }
         }))
     }
 
