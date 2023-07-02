@@ -3,7 +3,7 @@ import Intro from "./intro-page.jsx"
 import Quiz from "./quiz.jsx"
 
 function App() {
-  const [quizStarted, setQuizStarted] = React.useState(false)
+  const [quizStarted, setQuizStarted] = React.useState(true)
 
   return (
     <>
