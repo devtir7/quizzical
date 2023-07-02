@@ -80,9 +80,6 @@ export default function(props) {
                     disabled={props.disabled}
             />   
     )
-    // React.useEffect(() => {
-    //     console.log(choices)
-    // }, [choices])
 
     return (
         <>

@@ -48,8 +48,15 @@ hr {
     border: none;
 }
 
+.loading-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-/* INTRO PAGE STYLING */
+
+/* INTRO-PAGE STYLING */
 
 .intro-screen {
     display: flex;
@@ -84,6 +91,7 @@ form {
     font-size: 0.8rem;
     font-family: Inter;
     font-weight: 700;
+    font-size: 1rem;
 }
 
 .quiz-button {
