@@ -4,14 +4,26 @@ import {nanoid} from "nanoid"
 
 export default function(props) {
     const [choices, setChoices] = React.useState()
+    
+    //function that randomizes the positions of the items of an array
+    function shuffle(sourceArray) {
+        for (let i = 0; i < sourceArray.length - 1; i++) {
+            let j = i + Math.floor(Math.random() * (sourceArray.length - i));
 
+            let temp = sourceArray[j];
+            sourceArray[j] = sourceArray[i];
+            sourceArray[i] = temp;
+        }
+        return sourceArray;
+    }
+ 
     React.useEffect(() => {
-        //takes array of incorrect choices
-        //inserts the correct choice into that array
-        //at a random position
-        const tempArr = props.incorrectChoices?.toSpliced(Math.floor((props.incorrectChoices?.length + 1) * Math.random()) | 0, 0, props.correctAns)
-
-        const fixedVal = tempArr?.map(item => {
+ 
+        let tempArr = props?.incorrectChoices //assigns the props.incorrectChoices array to tempArr
+        tempArr.splice(1, 0, props.correctAns) //inserts value of correct answer into the tempArr array, thus creating an array of all the answer choices
+        let tempB = shuffle(tempArr) //positions of the items in tempArr are shuffled
+    
+        const fixedVal = tempB?.map(item => {
             return {
                 answer: item,
                 id: nanoid(),
@@ -21,6 +33,7 @@ export default function(props) {
         })
 
         setChoices(fixedVal)
+        // console.log(typeof tempArr)
     }, [])
 
     React.useEffect(() => {

@@ -144,14 +144,16 @@ export default function() {
                     </fieldset>
 
                 {/* Conditional rendering of the user's quiz score */}
-                {!!result && <p className='quiz-result'>You scored {count}/{questions.length} correct answers</p>}    
+                {!!result && <p className='quiz-result'>You scored {count}/{questions.length} correct answers</p>}
+
+                {/* Conditional rendering of error message prompting user to select an answer for each question */}
+                {!result && showQuizError && <p className="error-message">Please answer all questions.</p>}
 
                 {/* Switches text of button depending on state of result and loading
                     Button is disabled depending on the state of loading */}
                 <button className="quiz-button" disabled={loading}>{loading ? "Resetting..." : (result ? "Play again" : "Check answers")}</button>
 
-                {/* Conditional rendering of error message prompting user to select an answer for each question */}
-                {!result && showQuizError && <p className="error-message">Please answer all questions.</p>}
+                
                 
                 </form>
                 )}
