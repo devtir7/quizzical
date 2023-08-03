@@ -1,4 +1,7 @@
 /* GENERAL STYLING */
+#root {
+  height: 100vh;
+}
 
 body {
   margin: 0 auto;
@@ -55,12 +58,11 @@ hr {
 /* INTRO-PAGE STYLING */
 
 .intro-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* position: relative; */
 }
 
 /* QUIZ PAGE STYLING*/
