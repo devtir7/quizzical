@@ -1,210 +1,202 @@
-
-
 /* GENERAL STYLING */
 
 body {
-    margin: 0 auto;
-    text-align: center;
-    min-width: 414px;
-    min-height: 696px;
-    background: #F5F7FB;
+  margin: 0 auto;
+  font-size: 16px;
+  text-align: center;
+  min-width: 414px;
+  min-height: 696px;
+  background: #f5f7fb;
 }
 
 h1 {
-    font-family: 'Karla';
-    color: #293264;
-    font-size: 31.25px;
-    font-size: 31.25px;
-    line-height: 37px;
-    margin-bottom: 0;
+  font-family: "Karla";
+  color: #293264;
+  font-size: 31.25px;
+  font-size: 31.25px;
+  line-height: 37px;
+  margin-bottom: 0;
 }
 
 p {
-    font-family: 'Inter';
-    color: #293264;
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: 400;
-    margin-top: 0.4rem;
+  font-family: "Inter";
+  color: #293264;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  margin-top: 0.4rem;
 }
 
 button {
-    background: #4D5B9E;
-    border-radius: 15px;
-    border: none;
-    width: 193px;
-    height: 52px;
-    font-family: 'Inter';
-    font-weight: 500;
-    color: #F5F7FB;
-    font-size: 16px;
-    margin-top: 0.5rem;
-    cursor: pointer;
+  background: #4d5b9e;
+  border-radius: 15px;
+  border: none;
+  width: 193px;
+  height: 52px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: #f5f7fb;
+  font-size: 16px;
+  margin-top: 0.5rem;
+  cursor: pointer;
 }
 
 hr {
-    height: 0.04963rem;
-    background-color: #DBDEF0;
-    border: none;
+  height: 0.04963rem;
+  background-color: #dbdef0;
+  border: none;
 }
 
 .loading-screen {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
 
 /* INTRO-PAGE STYLING */
 
 .intro-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
 }
-
 
 /* QUIZ PAGE STYLING*/
 
 fieldset {
-    border: none;
+  border: none;
 }
 
 form {
-    margin: 0;
-    padding: 0;
-    border: none !important;
+  margin: 0;
+  padding: 0;
+  border: none !important;
 }
 
 .question-section {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .quiz-result {
-    color: #293264;
-    text-align: center;
-    font-size: 0.8rem;
-    font-family: Inter;
-    font-weight: 700;
-    font-size: 1rem;
+  color: #293264;
+  text-align: center;
+  font-size: 0.8rem;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .quiz-button {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .error-message {
-    color: red;
-    font-weight: bold;
-    margin-bottom: 10px;
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
-
 
 /* QUESTION SECTION STYLING */
 
 .question-text {
-    font-family: 'Karla';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 19px;
-    color: #293264;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 19px;
+  color: #293264;
 }
-
 
 /* ANSWER SECTION STYLING */
 
 .answer-section {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 input[type="radio"] {
-    opacity: 0;
-    height: 0;
-    width: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
 }
 
 label.button {
-    display: inline-block;
-    margin: 5px;
-    padding: 8px 16px;
-    background-color: #F5F7FB;
-    color: #293264;
-    border: 0.794px solid #4D5B9E;
-    border-radius: 7.942px;
-    cursor: pointer;
-    font-family: Inter;
-    font-weight: 500;
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 16px;
+  background-color: #f5f7fb;
+  color: #293264;
+  border: 0.794px solid #4d5b9e;
+  border-radius: 7.942px;
+  cursor: pointer;
+  font-family: Inter;
+  font-weight: 500;
 }
 
 label.button:hover {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 .no-hover {
-    pointer-events: none;
+  pointer-events: none;
 }
 
-input[type="radio"]:checked+label.button {
-    background-color: #D6DBF5;
-    border: none;
+input[type="radio"]:checked + label.button {
+  background-color: #d6dbf5;
+  border: none;
 }
 
 .correct-choice {
-    background-color: #94D7A2 !important;
+  background-color: #94d7a2 !important;
 }
 
 .incorrect-choice {
-    background-color: #F8BCBC !important;
+  background-color: #f8bcbc !important;
 }
 
 .unselected-choice {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .correct-choice,
 .incorrect-choice {
-    border: none;
+  border: none;
 }
-
 
 /* 
 MEDIA
     QUERIES */
 
 @media (min-width: 574px) {
-    .answer-section {
-        display: block;
-        margin-bottom: 1.5rem;
-    }
+  .answer-section {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
 
+  .question-section {
+    margin-top: 5rem;
+  }
+
+  .question-text {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 1400px) {
     .question-section {
-        margin-top: 5rem;
+      margin-top: 7.5rem;
     }
+  }
 
-    .question-text {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
+  @media only screen and (max-width: 690px) {
+    /* Reduce button width to fit on smaller screens */
+    label.button {
+      width: 50%;
     }
-
-    @media (min-width: 1400px) {
-        .question-section {
-            margin-top: 7.5rem;
-        }
-    }
-
-    @media only screen and (max-width: 690px) {
-
-        /* Reduce button width to fit on smaller screens */
-        label.button {
-            width: 50%;
-        }
-    }
-
+  }
 }
